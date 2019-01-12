@@ -10,7 +10,22 @@ stringsAnswers = {
    * @returns {String} A string with no more than amount number of repeated letters.
    */
   reduceString: function reduceString(str, amount) {
-    
+    const copyStr = [];
+    let previousChar;
+    let count = 0;
+    for (let i = 0; i < str.length; i += 1) {
+      if (str[i] === previousChar || !previousChar) {
+        if (count < amount) {
+          copyStr.push(str[i]);
+          count += 1;
+        }
+      } else {
+        copyStr.push(str[i]);
+        count = 1;
+      }
+      previousChar = str[i];
+    }
+    return copyStr.join('');
   },
 
   /**
@@ -22,6 +37,6 @@ stringsAnswers = {
    * @returns {String} The original string of text str reversed.
    */
   reverseString: function reverseString(str) {
-
+    return str.split('').reverse().join('');
   },
 };
