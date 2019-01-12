@@ -7,14 +7,7 @@ arraysAnswers = {
    * @returns {Number} The index of item in arr, or -1 if item is not in arr.
    */
   indexOf: function indexOf(arr, item) {
-    // Implement a function, that returns the 0 based index of an element in an array.
-    for (let i = 0; i < arr.length; i += 1) {
-      if (arr[i] === item) {
-        return i;
-      }
-    }
-
-    return -1;
+    return arr.findIndex(i => i === item);
   },
 
   /**
@@ -37,14 +30,7 @@ arraysAnswers = {
    * @returns {Number[]} A new array containing all numbers from arr except item.
    */
   remove: function remove(arr, item) {
-    const copyArr = [];
-    for (let i = 0; i < arr.length; i += 1) {
-      if (arr[i] !== item) {
-        copyArr.push(arr[i]);
-      }
-    }
-
-    return copyArr;
+    return arr.filter(i => i !== item);
   },
 
   /**
@@ -74,7 +60,6 @@ arraysAnswers = {
    */
   append: function append(arr, item) {
     arr.push(item);
-
     return arr;
   },
 
@@ -97,7 +82,7 @@ arraysAnswers = {
    * @returns {Number[]} The array arr, with the first element item added
    */
   prepend: function prepend(arr, item) {
-    arr.splice(0, 0, item);
+    arr.unshift(item);
     return arr;
   },
 
@@ -181,9 +166,7 @@ arraysAnswers = {
    * @returns {Number[]} A new array of numbers that contains the elements of arr squared.
    */
   square: function square(arr) {
-    const squares = arr.map(x => x * x);
-
-    return squares;
+    return arr.map(x => x * x);
   },
 
   /**
