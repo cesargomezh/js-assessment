@@ -14,6 +14,7 @@ module.exports = {
         "recursionAnswers": true,
         "stringsAnswers": true,
         "sinon": true,
+        "asyncAnswers": true,
     },
     "rules": {
         "linebreak-style": 0,
